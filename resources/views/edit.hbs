@@ -1,0 +1,32 @@
+{{>header}}
+{{>nav}}
+<section class="container my-5">
+    <h2>EDIT TASK</h2>
+    <form action="/editTask/{{editTask._id}}" class="mt-5 mx-auto w-75">
+        <div class="form-floating mb-3">
+            <input value="{{editTask.title}}" type="text" name="title" class="form-control" id="title"
+                placeholder="name@example.com">
+            <label for="title">Title....</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="status" value="true" type="radio" role="switch"
+                id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">True</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="status" value="false" type="radio" role="switch"
+                id="flexSwitchCheckChecked" checked>
+            <label class="form-check-label" for="flexSwitchCheckChecked">False</label>
+        </div>
+        <div class="form-floating">
+            <textarea name="content" class="form-control" placeholder="Leave a comment here" id="Content"
+                style="height: 100px">{{editTask.content}}</textarea>
+            <label for="Content">Content....</label>
+        </div>
+        <input min="2023-01-01" max="2025-12-31" value="2023-09-4" type="date" name="date"
+            class="form-control w-50 mt-4" required>
+        <button class="btn btn-danger mt-5">ADD Task</button>
+    </form>
+</section>
+
+{{>footer}}
